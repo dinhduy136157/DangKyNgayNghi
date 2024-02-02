@@ -1,0 +1,25 @@
+﻿<Window x:Class="DangKyNgayNghi.ChiTiet"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DangKyNgayNghi"
+        mc:Ignorable="d"
+        Title="Danh sách nhân viên nghỉ phép" Height="450" Width="800">
+    <Grid>
+        <DataGrid Grid.Row="4" Grid.ColumnSpan="2" Margin="0,10,0,0" Name="dgvEmployeeInfo" CanUserAddRows="False" AutoGenerateColumns="False">
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="FontWeight" Value="Bold"></Setter>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Mã nhân viên" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Từ ngày" Binding="{Binding tuNgay, StringFormat='dd/MM/yyyy'}"/>
+                <DataGridTextColumn Header="Đến ngày" Binding="{Binding denNgay, StringFormat='dd/MM/yyyy'}"/>
+                <DataGridTextColumn Header="Lý do" Binding="{Binding lyDo}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
